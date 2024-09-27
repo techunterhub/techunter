@@ -4,7 +4,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { email, subject, message } = body;
-
+    
     const transporter = nodemailer.createTransport({
       host: 'smtp.zoho.com',
       port: 465,

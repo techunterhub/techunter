@@ -11,7 +11,7 @@ export function ContactCards({ cardData }:{cardData: readonly CardData[]}) {
     <>
       <div className="max-w-[1450px] mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
-          {cardData.map((card: any, index: number) => (
+          {cardData.map((card: CardData, index: number) => (
             <div
               key={index}
               className="bg-white text-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 min-h-[250px]"
