@@ -10,21 +10,21 @@ export async function POST(req: Request) {
       port: 465,
       secure: true,
       auth: {
-        user: 'bishwa@techunterhub.com',
-        pass: 'July2002@27',
+        user: process.env.ZOHO_USER,
+        pass: process.env.ZOHO_PASS,
       },
     });
 
     const mailOptionsToSelf = {
-      from: 'bishwa@techunterhub.com ',
-      to: 'bishwa@techunterhub.com', 
+      from: process.env.ZOHO_USER,
+      to: process.env.ZOHO_USER, 
       subject: `Contact Form Submission: ${subject}`,
       text: `Message from ${email}:\n\n${message}`,
       html: `<p>Message from <strong>${email}</strong>:</p><p>${message}</p>`,
   };
 
   const mailOptionsToUser = {
-      from: 'bishwa@techunterhub.com',
+      from: process.env.ZOHO_USER,
       to: email,
       subject: 'Thank you for contacting us!',
       text: `Dear ${email},\n\nThank you for reaching out! We will get back to you soon.\n\nBest regards,\nTravelers Himalaya`,
