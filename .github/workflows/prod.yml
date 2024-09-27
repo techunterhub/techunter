@@ -3,14 +3,14 @@ name: Deploy to Production
 on:
   push:
     branches:
-      - main # Listen to the main branch
+      - main 
     paths-ignore:
       - 'docs/**'
-  workflow_dispatch: # Allow manual trigger for this workflow
+  workflow_dispatch:
 
 jobs:
-  production_deployment:
-    if: contains(github.event.head_commit.message, '[prod-build]') # Trigger only on commit message with '[prod-build]'
+  build:
+    if: contains(github.event.head_commit.message, 'prod-build')
     runs-on: ubuntu-latest
 
     steps:
