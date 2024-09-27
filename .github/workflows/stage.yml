@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Run Build for Staging
-        run: npm run build:stage 
+        run: npm run build:stage
 
       - name: Deploy to Vercel Staging
         run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
