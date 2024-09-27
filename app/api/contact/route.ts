@@ -31,6 +31,7 @@ export async function POST(req: Request) {
       html: `<p>Dear <strong>${email}</strong>,</p><p>Thank you for reaching out! We will get back to you soon.</p><p>Best regards,<br/>Travelers Himalaya</p>`,
   };
 
+  
   await Promise.all([
     transporter.sendMail(mailOptionsToSelf),
     transporter.sendMail(mailOptionsToUser),
