@@ -28,8 +28,8 @@ export function Form() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const response = await fetch('/api/send-email', {
-      method: 'POST',
+    const response = await fetch('/api/contact', {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
