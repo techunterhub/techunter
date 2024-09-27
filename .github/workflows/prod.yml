@@ -29,7 +29,7 @@ jobs:
         run: npm run build:prod
 
       - name: Deploy to Vercel Production
-        run: vercel --prod
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_PRODUCTION }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
