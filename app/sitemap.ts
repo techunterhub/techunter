@@ -1,9 +1,20 @@
 import type { MetadataRoute } from 'next';
 
-// Function to fetch dynamic URLs
+
+/**
+ * Fetches and returns dynamic URLs with corresponding metadata from the server.
+ * Each URL is expected to have the following properties:
+ * - `slug`: The slug of the URL.
+ * - `lastModified`: The last modified date of the URL in ISO format.
+ * - `changeFrequency`: The frequency at which the URL is expected to change.
+ * - `priority`: The priority of the URL from 0.0 to 1.0.
+ *
+ * @returns {Promise<MetadataRoute[]>} An array of dynamic URLs with metadata.
+ * @throws {Error} If there is an error fetching the dynamic URLs.
+ */
 async function getDynamicUrls() {
   try {
-    const response = await fetch('techunterhub.com'); // Replace with your API endpoint
+    const response = await fetch('techunterhub.com');
 
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.statusText}`);
@@ -12,24 +23,38 @@ async function getDynamicUrls() {
     const data = await response.json();
 
     return data.map((item) => ({
-      url: `techunterhub.com/${item.slug}`, // Adjust based on your API response
+      url: `techunterhub.com/${item.slug}`,
       lastModified: item.lastModified ? new Date(item.lastModified) : new Date(),
-      changeFrequency: item.changeFrequency || 'monthly', // Default value if not provided
-      priority: item.priority || 0.5, // Default value if not provided
+      changeFrequency: item.changeFrequency || 'monthly',
+      priority: item.priority || 0.5,
     }));
   } catch (error) {
     console.error('Error fetching dynamic URLs:', error);
-    return []; // Return an empty array on error
+    return []; 
   }
 }
 
+/**
+ * Generates a sitemap for the app.
+ *
+ * The sitemap includes a static list of URLs with corresponding metadata and
+ * a dynamic list of URLs fetched from the server. The server is expected to
+ * return a JSON array of objects with the following properties:
+ * - `slug`: The slug of the URL.
+ * - `lastModified`: The last modified date of the URL in ISO format.
+ * - `changeFrequency`: The frequency at which the URL is expected to change.
+ * - `priority`: The priority of the URL from 0.0 to 1.0.
+ *
+ * @returns {Promise<MetadataRoute.Sitemap>} A promise that resolves to an array of
+ * URLs with metadata.
+ */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const urls = await getDynamicUrls(); // Fetch dynamic URLs
+  const urls = await getDynamicUrls();
 
-  // Add static URLs to the sitemap if needed
+
   const staticUrls = [
     {
-      url: 'techunterhub.com', // Homepage
+      url: 'techunterhub.com', 
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
