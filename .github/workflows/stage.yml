@@ -3,14 +3,14 @@ name: Deploy to Staging
 on:
   push:
     branches:
-      - main # Listen to the main branch
+      - main 
     paths-ignore:
-      - 'docs/**' # Ignore changes in the docs folder or any irrelevant files
-  workflow_dispatch: # Allow manual trigger for this workflow
+      - 'docs/**' 
+  workflow_dispatch:
 
 jobs:
-  stage_deployment:
-    if: contains(github.event.head_commit.message, '[stage-build]') # Trigger only on commit message with '[stage-build]'
+  build:
+    if: contains(github.event.head_commit.message, 'stage-build') 
     runs-on: ubuntu-latest
 
     steps:
