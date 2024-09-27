@@ -1,12 +1,14 @@
 {
-  "name": "next-starter",
+  "name": "techunter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "stage-build": "cross-env NODE_ENV=staging next build",
+    "prod-build": "cross-env NODE_ENV=production next build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
@@ -24,6 +26,7 @@
     "@types/nodemailer": "^6.4.16",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "postcss": "^8",
