@@ -1,31 +1,27 @@
 import type { MetadataRoute } from 'next';
 
+interface DynamicUrl {
+  slug: string;
+  lastModified?: string;
+  changeFrequency?: 'monthly' | 'yearly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'never'; // Specific string literals
+  priority?: number;
+}
 
-/**
- * Fetches and returns dynamic URLs with corresponding metadata from the server.
- * Each URL is expected to have the following properties:
- * - `slug`: The slug of the URL.
- * - `lastModified`: The last modified date of the URL in ISO format.
- * - `changeFrequency`: The frequency at which the URL is expected to change.
- * - `priority`: The priority of the URL from 0.0 to 1.0.
- *
- * @returns {Promise<MetadataRoute[]>} An array of dynamic URLs with metadata.
- * @throws {Error} If there is an error fetching the dynamic URLs.
- */
+// Function to fetch dynamic URLs
 async function getDynamicUrls() {
   try {
-    const response = await fetch('techunterhub.com');
+    const response = await fetch('https://techunterhub.com/');
 
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.statusText}`);
     }
 
-    const data = await response.json();
+    const data: DynamicUrl[] = await response.json();
 
-    return data.map((item) => ({
-      url: `techunterhub.com/${item.slug}`,
+    return data.map((item: DynamicUrl) => ({
+      url: `https://techunterhub.com/${item.slug}`,
       lastModified: item.lastModified ? new Date(item.lastModified) : new Date(),
-      changeFrequency: item.changeFrequency || 'monthly',
+      changeFrequency: item.changeFrequency || 'monthly', // Use a default value
       priority: item.priority || 0.5,
     }));
   } catch (error) {
@@ -34,41 +30,27 @@ async function getDynamicUrls() {
   }
 }
 
-/**
- * Generates a sitemap for the app.
- *
- * The sitemap includes a static list of URLs with corresponding metadata and
- * a dynamic list of URLs fetched from the server. The server is expected to
- * return a JSON array of objects with the following properties:
- * - `slug`: The slug of the URL.
- * - `lastModified`: The last modified date of the URL in ISO format.
- * - `changeFrequency`: The frequency at which the URL is expected to change.
- * - `priority`: The priority of the URL from 0.0 to 1.0.
- *
- * @returns {Promise<MetadataRoute.Sitemap>} A promise that resolves to an array of
- * URLs with metadata.
- */
+// Generates the sitemap
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const urls = await getDynamicUrls();
 
-
   const staticUrls = [
     {
-      url: 'techunterhub.com', 
+      url: 'https://techunterhub.com',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly' as const, // Assert the type
       priority: 1,
     },
     {
-      url: 'techunterhub.com/about',
+      url: 'https://techunterhub.com/about',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const, // Assert the type
       priority: 0.8,
     },
     {
-      url: 'techunterhub.com/contact',
+      url: 'https://techunterhub.com/contact',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const, // Assert the type
       priority: 0.5,
     },
   ];
