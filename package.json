@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "stage-build": "cross-env NODE_ENV=staging next build",
-    "prod-build": "cross-env NODE_ENV=production next build"
+     "build:stage": "next build && export NODE_ENV=staging",
+    "build:prod": "next build && export NODE_ENV=production"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",

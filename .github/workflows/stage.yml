@@ -1,0 +1,36 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - main # Listen to the main branch
+    paths-ignore:
+      - 'docs/**' # Ignore changes in the docs folder or any irrelevant files
+  workflow_dispatch: # Allow manual trigger for this workflow
+
+jobs:
+  stage_deployment:
+    if: contains(github.event.head_commit.message, '[stage-build]') # Trigger only on commit message with '[stage-build]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Build for Staging
+        run: npm run build:stage 
+
+      - name: Deploy to Vercel Staging
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --scope techinters-projects --env NODE_ENV=staging
+        env:
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_STAGING }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          DOMAIN: ${{ secrets.STAGING_DOMAIN }}
