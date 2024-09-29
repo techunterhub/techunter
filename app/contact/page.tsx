@@ -1,7 +1,6 @@
 "use client";
-
 import { ContactCards } from "@/components/contact/Cards";
-import { Form } from "@/components/contact/Form";
+import Form from "@/components/contact/Form";
 
 interface CardData {
   title: string;
@@ -9,38 +8,39 @@ interface CardData {
   description: string;
 }
 
+
 export default function Contact() {
 
   const cardData: readonly CardData[] = [
     {
-      title: "Customer Support",
-      description: "We are here to help you with any issue.",
-      icon: "📞",
+      icon: "💬",
+      title: "Live Chat Assistance",
+      description: "Got a quick question? Chat with our support agents in real-time to get immediate solutions to your queries.",
     },
     {
-      title: "Technical Support",
-      description: "Need technical assistance? We're on it.",
       icon: "💻",
+      title: "Technical Support",
+      description: "Facing technical difficulties? Our skilled technicians are available to troubleshoot and help you get back on track with ease.",
     },
     {
-      title: "Billing Enquiries",
-      description: "Questions about your bill? Contact us for assistance.",
-      icon: "💳",
+      icon: "📧",
+      title: "Email Support",
+      description: "Prefer writing to us? Drop an email and our team will respond with personalized solutions as soon as possible.",
     },
     {
-      title: "Sales",
-      description: "Looking to purchase our services? Let's talk.",
-      icon: "🛒",
-    },
-    {
-      title: "Partnerships",
-      description: "Collaborate with us for mutual growth.",
       icon: "🤝",
+      title: "Business Partnerships",
+      description: "Interested in collaborating or forming a partnership? Let’s explore opportunities to grow and succeed together.",
     },
     {
-      title: "General Inquiries",
-      description: "Have a question? We're happy to help.",
-      icon: "❓",
+      icon: "🛠️",
+      title: "Product Support",
+      description: "Need help with using our products? Our dedicated support team is here to guide you every step of the way.",
+    },
+    {
+      icon: "📝",
+      title: "Feedback & Suggestions",
+      description: "We value your input! Share your feedback or suggestions to help us improve our services and better meet your needs.",
     },
   ];
 

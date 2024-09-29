@@ -1,0 +1,12 @@
+.transition-all {
+    transition: max-height 0.5s ease, padding 0.5s ease, width 0.5s ease,
+      opacity 0.7s ease;
+  }
+  
+  .open {
+    max-height: auto;
+    height: 100%;
+    width: 100vw;
+    padding: 1rem;
+    opacity: 1;
+  }

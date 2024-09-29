@@ -1,24 +1,28 @@
 'use client';
 
 interface CardData {
-    title:string,
-    icon:string,
-    description:string
+  title: string;
+  icon: string;
+  description: string;
 }
 
-export function ContactCards({ cardData }:{cardData: readonly CardData[]}) {
+export function ContactCards({ cardData }: { cardData: readonly CardData[] }) {
   return (
     <>
       <div className="max-w-[1450px] mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
-          {cardData.map((card: CardData, index: number) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 py-10">
+          {cardData.map((card, index) => (
             <div
               key={index}
-              className="bg-white text-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 min-h-[250px]"
+              className={`font-montserrat bg-white flex flex-col text-black p-8 rounded-lg shadow-lg border border-transparent transform transition duration-300 hover:border-gray-800 cursor-pointer 
+          ${index === 0 ? 'lg:col-span-2 lg:row-span-2 lg:flex lg:flex-col lg:justify-center lg:gap-4 lg:tracking-widest row-span-2' : ''} 
+          min-h-[250px]`}
             >
               <div className="text-4xl">{card.icon}</div>
-              <h2 className="text-xl font-bold mt-4">{card.title}</h2>
-              <p className="mt-2">{card.description}</p>
+              <h2 className={`text-4xl font-bold lg:font-black mt-4 ${index === 0 ? 'lg:text-5xl' : ''}`}>
+                {card.title}
+              </h2>
+              <p className="mt-2 font-medium text-sm text-gray-600">{card.description}</p>
             </div>
           ))}
         </div>

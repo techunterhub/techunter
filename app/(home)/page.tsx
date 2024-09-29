@@ -8,6 +8,12 @@ export default function Home() {
       <Link target="_blank" className="text-teal-800 text-4xl font-bold" href="https://discord.gg/QF4EvhWm">
         Discord
       </Link>
+      <div className="py-5">
+        <h2 className="text-2xl text-gray-950 font-bold">Also make sure to check our gpt  </h2>
+        <Link target="_blank" className="text-teal-800 text-4xl font-bold" href="https://gpt.techunterhub.com/">
+        techunter gpt
+      </Link>
+      </div>
      </div>
     </div>
   );
