@@ -1,21 +1,23 @@
 {
-  "name": "next-starter",
-  "version": "0.1.1",
+  "name": "techunter",
+  "version": "0.1.6",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+     "build:stage": "next build && export NEXT_PUBLIC_APP_ENV=staging",
+    "build:prod": "next build && export NEXT_PUBLIC_APP_ENV=production"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
-    "next": "14.2.13",
+    "next": "^14.2.13",
     "nodemailer": "^6.9.15",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
     "redux": "^5.0.1"
   },
@@ -24,6 +26,7 @@
     "@types/nodemailer": "^6.4.16",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "postcss": "^8",
