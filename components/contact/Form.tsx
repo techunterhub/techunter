@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 interface FormData {
   name: string;
-  email: string;
+  email: string; 
   subject: string;
   message: string;
 }
@@ -16,6 +16,7 @@ export function Form() {
     subject: '',
     message: '',
   });
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -28,7 +29,7 @@ export function Form() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const response = await fetch('/api/send-email', {
+    await fetch('/api/send-mail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,13 +37,13 @@ export function Form() {
       body: JSON.stringify(formData),
     });
 
-    const data = await response.json();
-    if (data.success) {
-      alert('Email sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
-    } else {
-      alert('Failed to send email: ' + data.error);
-    }
+    // const data = await response.json();
+    // if (data.success) {
+    //   alert('Email sent successfully!');
+    //   setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
+    // } else {
+    //   alert('Failed to send email: ' + data.error);
+    // }
   };
   return (
     <div className="max-w-[600px] mx-auto p-6 bg-white shadow-md rounded-md">

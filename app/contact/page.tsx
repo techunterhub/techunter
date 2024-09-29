@@ -45,13 +45,18 @@ export default function Contact() {
   ];
 
   return (
-    <div className="">
-      <div className="bg-gray-950 py-[6rem] text-center text-gray-100">
-        <h1 className="text-5xl font-semibold">How can we help you?</h1>
-        <p className="max-w-[720px] mx-auto py-4">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi, nisi accusantium. Praesentium quasi facilis, ratione cupiditate dolorum est consequuntur deserunt?
-        </p>
+    <div className="max-w-[1450px] mx-auto">
+            <div className="mb-8 font-montserrat">
+        <div className="mt-28 flex flex-col gap-6">
+          <h1 className="font-montserrat text-4xl font-bold leading-[3rem] tracking-wider text-gray-950 sm:text-[4.5rem] sm:leading-[4.5rem] md:text-[5.2rem] md:leading-[5rem] lg:text-[8rem] lg:leading-[7.5rem] xl:text-[9rem] xl:leading-[8.5rem]">
+            It's time to Learn & Collaborate
+          </h1>
+          <p className="font-montserrat text-base font-semibold italic tracking-wider text-gray-950 sm:text-xl md:text-2xl">
+            Let's create a big community of Techunter toghether.
+          </p>
+        </div>
       </div>
+      <div className="mt-3 w-full border border-black opacity-80"></div>
       <ContactCards cardData={cardData} />
       <h1 className="text-3xl font-semibold text-center">Contact us below</h1>
       <Form />
