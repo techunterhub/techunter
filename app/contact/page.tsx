@@ -45,7 +45,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="max-w-[1450px] mx-auto">
+    <div className="max-w-[1400px] mx-auto">
             <div className="mb-8 font-montserrat">
         <div className="mt-28 flex flex-col gap-6">
           <h1 className="font-montserrat text-4xl font-bold leading-[3rem] tracking-wider text-gray-950 sm:text-[4.5rem] sm:leading-[4.5rem] md:text-[5.2rem] md:leading-[5rem] lg:text-[8rem] lg:leading-[7.5rem] xl:text-[9rem] xl:leading-[8.5rem]">
