@@ -105,7 +105,7 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <header className="bg-white font-montserrat">
+      <header className="bg-white font-montserrat px-4">
 
         <nav
           aria-label="Global"

@@ -44,7 +44,7 @@ const Home = () => {
 
   return (
     <div className="py-16">
-      <div className="container mx-auto px-4 text-gray-900">
+      <div className="container mx-auto px-6 py-4 text-gray-900">
         <h1 className="mb-6 text-4xl font-bold md:text-6xl">
           Techunter: Your Tech Guide and Mentor
         </h1>
