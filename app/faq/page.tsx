@@ -84,7 +84,7 @@ const FaqPage = () => {
         />
       </Head>
       <div>
-        <div className="max-w-[1440px] mx-auto md:px-[2rem] py-5" id="faqs">
+        <div className="container mx-auto md:px-[2rem] py-5" id="faqs">
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div

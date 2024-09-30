@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <>
       <div className="w-full rounded-lg bg-gray-100">
-        <div className="mx-auto max-w-[1450px] p-10">
+        <div className="mx-auto container p-10">
           <FooterLinks />
           <div className="mx-auto mt-10 flex w-[20%] min-w-60 items-center justify-between">
             {icons.map((elem: IconsData, i:number) => (

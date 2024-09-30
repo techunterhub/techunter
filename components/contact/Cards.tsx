@@ -9,7 +9,7 @@ interface CardData {
 export function ContactCards({ cardData }: { cardData: readonly CardData[] }) {
   return (
     <>
-      <div className="max-w-[1450px] mx-auto px-4">
+      <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 py-10">
           {cardData.map((card, index) => (
             <div
