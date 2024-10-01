@@ -11,7 +11,7 @@ interface FormData {
 }
 
 const Form = () => {
-  const { register, handleSubmit } = useForm<FormData>()
+  const { register, handleSubmit, reset } = useForm<FormData>()
   const onSubmit = async (formData: FormData ) => {
     try {
       const response = await fetch('/api/contact', {
@@ -33,6 +33,7 @@ const Form = () => {
       console.error('Error:', error);
       alert('An error occurred while sending the email. Please try again.');
     }
+    reset();
   };
 
   const [hover, setHover] = useState(false);
