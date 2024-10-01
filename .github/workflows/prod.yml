@@ -34,3 +34,22 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_PRODUCTION }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
+          
+      - name: build notifier
+        run : | 
+        echo "building project"
+      
+      - name: Notify on telegram
+        if: success()
+        run : |
+           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+        -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+        -d text="✅ Build Succeeded for techunter prod"
+
+      - name : Notify Failure On telegram
+        if : failure()
+        run : |
+           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+        -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+        -d text="❌ Build Failed for techunter prod"
+
