@@ -12,12 +12,12 @@ export default function BlogsList({ blogs }: { blogs: NavbarBlogData[] }) {
                         <h3 className="text-sm font-semibold text-gray-900">
                             Recent posts
                         </h3>
-                        <a
-                            href="#"
+                        <Link
+                            href="/blogs"
                             className="text-sm font-semibold text-indigo-600 hover:underline"
                         >
                             See all →
-                        </a>
+                        </Link>
                     </div>
                     <ul className="space-y-6 font-montserrat">
                         {blogs.map((item, i) => (
