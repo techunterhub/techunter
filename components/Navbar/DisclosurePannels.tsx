@@ -16,6 +16,7 @@ interface DisclosurePannelsProps {
     callsToAction?: NavbarcallsToActionData[];
     title: string;
 }
+
 export default function DisclosurePannels({ products, callsToAction, title }: DisclosurePannelsProps) {
 
     return (

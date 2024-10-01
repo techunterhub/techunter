@@ -50,23 +50,7 @@ export default function Example() {
               <Productdata products={products} />
               <CallsToAction callsToAction={callsToAction} />
             </PopOverPanel>
-
-            <PopOverPanel title="Blogs" >
-              <div className="p-4">
-                <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-sm font-semibold text-gray-900">
-                    Recent posts
-                  </h3>
-                  <a
-                    href="#"
-                    className="text-sm font-semibold text-indigo-600 hover:underline"
-                  >
-                    See all →
-                  </a>
-                </div>
-                <BlogsList blogs={blogs} />
-              </div>
-            </PopOverPanel>
+            <BlogsList blogs={blogs} />
             <Links
               href="/about-us"
               text="About Us"
