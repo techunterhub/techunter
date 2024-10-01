@@ -9,9 +9,6 @@ import {
     ChevronDownIcon,
 } from "@heroicons/react/20/solid";
 
-
-
-
 export default function PopOverPanel({  title, children }:{ title: string, children: React.ReactNode }) {
     return (
         <Popover className="relative">

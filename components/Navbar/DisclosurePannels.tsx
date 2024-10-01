@@ -9,17 +9,13 @@ import {
     ChevronDownIcon,
 } from "@heroicons/react/20/solid";
 
-import { NavbarProductData, NavbarcallsToActionData, NavbarBlogData } from "@/types/types";
-
+import { NavbarProductData, NavbarcallsToActionData } from "@/types/types";
 
 interface DisclosurePannelsProps {
     products?: NavbarProductData[];
     callsToAction?: NavbarcallsToActionData[];
     title: string;
 }
-
-
-
 export default function DisclosurePannels({ products, callsToAction, title }: DisclosurePannelsProps) {
 
     return (
@@ -34,7 +30,7 @@ export default function DisclosurePannels({ products, callsToAction, title }: Di
                     />
                 </DisclosureButton>
                 <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products,...callsToAction].map((item) => (
+                    { products && callsToAction && [...products,...callsToAction].map((item) => (
                         <DisclosureButton
                             key={item.name}
                             as="a"

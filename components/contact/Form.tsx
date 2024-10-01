@@ -27,7 +27,7 @@ const Form = () => {
         console.error('Error sending email:', errorData.message);
       } else {
         console.log('Email sent successfully!');
-        alert('Email sent successfully!'); // Optionally show success message
+        alert('Email sent successfully!'); 
       }
     } catch (error) {
       console.error('Error:', error);

@@ -7,7 +7,6 @@ import {
     XMarkIcon,
 } from "@heroicons/react/24/outline";
 
-
 import Links from "../ui/Link";
 
 import { NavbarProductData, NavbarcallsToActionData, NavbarBlogData } from "@/types/types";
@@ -32,15 +31,14 @@ export default function MobileNavbar({ products, callsToAction, mobileMenuOpen, 
                         <XMarkIcon aria-hidden="true" className="h-6 w-6" />
                     </button>
                 </div>
-
                 <div className="mt-6 flow-root">
                     <div className="-my-6 divide-y divide-gray-500/10 space-y-2 py-6">
-                            <Links href="/" text="Home" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
-                            <DisclosurePannels products={products} callsToAction={callsToAction} title="Resources" />
-                            <Links href="#" text="Blogs" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
-                            <Links href="/about-us" text="About Us" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
-                            <Links href="/contact" text="Contact Us" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
-                            <Links href="#" text="Login" style="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
+                        <Links href="/" text="Home" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
+                        <DisclosurePannels products={products} callsToAction={callsToAction} title="Resources" />
+                        <Links href="#" text="Blogs" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
+                        <Links href="/about-us" text="About Us" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
+                        <Links href="/contact" text="Contact Us" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
+                        <Links href="#" text="Login" style="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
                     </div>
                 </div>
             </DialogPanel>

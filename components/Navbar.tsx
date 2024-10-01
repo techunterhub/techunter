@@ -21,8 +21,8 @@ import PopOverPanel from "./Navbar/PopOverPannel";
 import MobileNavbar from "./Navbar/MobileNavbar";
 
 
-import { NavbarProductData,NavbarcallsToActionData,NavbarBlogData } from "@/types/types";
-
+import { NavbarProductData, NavbarcallsToActionData, NavbarBlogData } from "@/types/types";
+import Links from "./ui/Link";
 
 
 const products: NavbarProductData[] = [
@@ -87,14 +87,12 @@ export default function Example() {
   return (
     <>
       <header className="bg-white font-montserrat px-4">
-
         <nav
           aria-label="Global"
           className="mx-auto flex items-center justify-between py-6 lg:px-8"
         >
           <div className="flex lg:flex-1">
             <Link href='/' className="-m-1.5 p-1.5">
-              <span className="sr-only">Techunter</span>
               <h1 className="text-xl font-bold">Techunter</h1>
             </Link>
           </div>
@@ -109,13 +107,11 @@ export default function Example() {
             </button>
           </div>
           <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-            <Link
+            <Links
               href='/'
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Home
-            </Link>
-
+              text="Home"
+              style="text-sm font-semibold leading-6 text-gray-900"
+            />
             <PopOverPanel title="Tools">
               <div className="p-4">
                 {products.map((item: NavbarProductData) => (
@@ -190,24 +186,19 @@ export default function Example() {
                 </ul>
               </div>
             </PopOverPanel>
-
-            <Link
+            <Links
               href="/about-us"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              About us
-            </Link>
-            <Link
+              text="About Us"
+              style="text-sm font-semibold leading-6 text-gray-900" />
+            <Links
               href="/contact"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Contact us
-            </Link>
+              text="Contact Us"
+              style="text-sm font-semibold leading-6 text-gray-900" />
           </PopoverGroup>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-bold leading-6 text-gray-900">
+            <Link href="#" className="text-sm font-bold leading-6 text-gray-900">
               Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </nav>
         <MobileNavbar products={products} callsToAction={callsToAction} blogs={blogs} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
