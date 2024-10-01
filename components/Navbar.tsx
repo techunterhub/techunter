@@ -17,28 +17,15 @@ import {
 } from "@heroicons/react/20/solid";
 
 
-
-interface BlogData {
-  date: string;
-  title: string;
-  description: string;
-  link: string;
-}
-
-
 import PopOverPanel from "./Navbar/PopOverPannel";
 import MobileNavbar from "./Navbar/MobileNavbar";
 
 
-interface ProductData {
-  name: string;
-  description: string;
-  href: string;
-  icon: React.ElementType;
-}
+import { NavbarProductData,NavbarcallsToActionData,NavbarBlogData } from "@/types/types";
 
 
-const products: ProductData[] = [
+
+const products: NavbarProductData[] = [
   {
     name: "Techunter GPT",
     description: "Try our latest AI chabot for your doubt solving.",
@@ -66,18 +53,12 @@ const products: ProductData[] = [
   },
 ];
 
-interface callsToActionData {
-  name: string;
-  href: string;
-  icon: React.ElementType;
-}
-
-const callsToAction: callsToActionData[] = [
+const callsToAction: NavbarcallsToActionData[] = [
   { name: "Chat with chatbot", href: "#", icon: ChatBubbleLeftRightIcon },
   { name: "Contact Us", href: "contact", icon: PhoneIcon },
 ];
 
-const blogs: BlogData[] = [
+const blogs: NavbarBlogData[] = [
   {
     date: "Mar 5, 2023",
     title: "Boost your conversion rate",
@@ -137,7 +118,7 @@ export default function Example() {
 
             <PopOverPanel title="Tools">
               <div className="p-4">
-                {products.map((item: ProductData) => (
+                {products.map((item: NavbarProductData) => (
                   <div
                     key={item.name}
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
