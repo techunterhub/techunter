@@ -15,13 +15,6 @@ export async function POST(req: Request) {
       },
     });
 
-    const mailOptionsToSelf = {
-      from: process.env.ZOHO_USER,
-      to: process.env.ZOHO_USER, 
-      subject: `Contact Form Submission: ${subject}`,
-      text: `Message from ${email}:\n\n${message}`,
-      html: `<p>Message from <strong>${email}</strong>:</p><p>${message}</p>`,
-  };
 
   const mailOptionsToUser = {
       from: process.env.ZOHO_USER,
@@ -84,9 +77,29 @@ export async function POST(req: Request) {
       `,
   };
 
+  await fetch(
+    `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: process.env.TELEGRAM_CHAT_ID,
+        text: `
+        <b>New Contact Form Submission</b>
+        <b>Name:</b> ${name}
+        <b>Email:</b> ${email}
+        <b>Subject:</b> ${subject}
+        <b>Message:</b> ${message}
+        `,
+        parse_mode: 'HTML',
+      }),
+    }
+  )
+
   
   await Promise.all([
-    transporter.sendMail(mailOptionsToSelf),
     transporter.sendMail(mailOptionsToUser),
   ])
     return new Response(
