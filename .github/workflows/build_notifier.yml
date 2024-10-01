@@ -1,0 +1,35 @@
+name : build notifier
+
+on:
+  push:
+    branches:
+      - main 
+    paths-ignore:
+      - 'docs/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: contains(github.event.head_commit.message, 'prod-build')
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+
+      - name: build notifier
+        run : | 
+        echo "building project"
+      
+      - name: Notify on telegram
+        if: success()
+        run : |
+           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+        -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+        -d text="✅ Build Succeeded for techunter prod"
+
+      - name : Notify Failure On telegram
+        if : failure()
+        run : |
+           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+        -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+        -d text="❌ Build Failed for techunter prod"
