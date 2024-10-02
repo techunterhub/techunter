@@ -15,8 +15,20 @@ interface FormData {
 
 const Form = () => {
   const { register, handleSubmit, reset } = useForm<FormData>();
-  const notify = () =>
+  const messegeSentAlert = () =>
     toast.success("Message sent successfully!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  const messegeFailedAlert = () =>
+    toast.warn("Message Sending Failed", {
       position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -38,16 +50,13 @@ const Form = () => {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Error sending email:", errorData.message);
+        messegeFailedAlert();
       } else {
-        console.log("Email sent successfully!");
-        notify();
+        messegeSentAlert();
         reset();
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while sending the email. Please try again.");
+      messegeFailedAlert();
     }
   };
 
