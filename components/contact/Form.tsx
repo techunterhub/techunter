@@ -55,7 +55,7 @@ const Form = () => {
         messegeSentAlert();
         reset();
       }
-    } catch (error) {
+    } catch {
       messegeFailedAlert();
     }
   };

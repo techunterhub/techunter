@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getBlogs } from "@/store/slices/BlogsSlice";
 import type { RootState } from "../../store/store";
+import Image from "next/image";
 
 interface RSSFeedItem {
   title: string;
@@ -34,7 +35,10 @@ export default function BlogsCard() {
 
   const blogData = useSelector((state: RootState) => state.blogs.data);
 
-  const memoizedBlogs = useMemo(() => blogData as RSSFeedItem[] | undefined, [blogData]);
+  const memoizedBlogs = useMemo(
+    () => blogData as RSSFeedItem[] | undefined,
+    [blogData]
+  );
 
   return (
     <>
@@ -42,11 +46,11 @@ export default function BlogsCard() {
         memoizedBlogs.map((blog) => (
           <Link href={blog.link} key={blog.guid._} className="">
             <div className="aspect-[480/258] overflow-hidden rounded-[4px] bg-[#f5f5f5]">
-              <img
+              <Image
                 src={blog.image}
                 alt={blog.title}
-                width="100%"
-                height="100%"
+                width={480}
+                height={258}
                 className="w-full aspect-[480/258] group-hover:scale-[1.1] object-cover duration-300 max-w-full h-auto"
               />
             </div>
@@ -54,7 +58,9 @@ export default function BlogsCard() {
               <p className="body-2 group-hover:underline duration-300 font-bold mt-4 mb-0 text-gray-950 leading-[150%] text-pretty">
                 {blog.title}
               </p>
-              <span className="text-pretty text-muted line-clamp-3">{blog.description}</span>
+              <span className="text-pretty text-muted line-clamp-3">
+                {blog.description}
+              </span>
             </div>
           </Link>
         ))
