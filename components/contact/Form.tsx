@@ -1,7 +1,10 @@
-'use client'; // Form.tsx
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { FaArrowRight } from 'react-icons/fa';
+"use client"; // Form.tsx
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { FaArrowRight } from "react-icons/fa";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 interface FormData {
   name: string;
@@ -11,27 +14,40 @@ interface FormData {
 }
 
 const Form = () => {
-  const { register, handleSubmit } = useForm<FormData>()
-  const onSubmit = async (formData: FormData ) => {
+  const { register, handleSubmit, reset } = useForm<FormData>();
+  const notify = () =>
+    toast.success("Message sent successfully!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  const onSubmit = async (formData: FormData) => {
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('Error sending email:', errorData.message);
+        console.error("Error sending email:", errorData.message);
       } else {
-        console.log('Email sent successfully!');
-        alert('Email sent successfully!'); 
+        console.log("Email sent successfully!");
+        notify();
+        reset();
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while sending the email. Please try again.');
+      console.error("Error:", error);
+      alert("An error occurred while sending the email. Please try again.");
     }
   };
 
@@ -43,14 +59,16 @@ const Form = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex w-full flex-col items-center justify-center gap-7 font-montserrat sm:absolute sm:left-1/2 sm:top-1/2 sm:w-1/2 sm:-translate-x-[50%] sm:-translate-y-[50%]"
-       
       >
         <div className="w-full">
-          <label className="text-sm font-normal text-neutral-600 md:text-xl" htmlFor="name">
+          <label
+            className="text-sm font-normal text-neutral-600 md:text-xl"
+            htmlFor="name"
+          >
             YOUR NAME
           </label>
           <input
-            {...register('name')}
+            {...register("name")}
             className="w-full border-b border-black py-1 text-base font-normal outline-none hover:border-b-2 focus:border-b-2"
             type="text"
             id="name"
@@ -60,11 +78,14 @@ const Form = () => {
           />
         </div>
         <div className="w-full">
-          <label className="text-sm font-normal text-neutral-600 md:text-xl" htmlFor="email">
+          <label
+            className="text-sm font-normal text-neutral-600 md:text-xl"
+            htmlFor="email"
+          >
             EMAIL ADDRESS
           </label>
           <input
-            {...register('email')}
+            {...register("email")}
             className="w-full border-b border-black py-1 text-base font-normal outline-none hover:border-b-2 focus:border-b-2"
             type="email"
             id="email"
@@ -74,11 +95,14 @@ const Form = () => {
           />
         </div>
         <div className="w-full">
-          <label className="text-sm font-normal text-neutral-600 md:text-xl" htmlFor="subject">
+          <label
+            className="text-sm font-normal text-neutral-600 md:text-xl"
+            htmlFor="subject"
+          >
             SUBJECT
           </label>
           <input
-            {...register('subject')}
+            {...register("subject")}
             className="w-full border-b border-black py-1 text-base font-normal outline-none hover:border-b-2 focus:border-b-2"
             type="text"
             id="subject"
@@ -88,11 +112,14 @@ const Form = () => {
           />
         </div>
         <div className="w-full">
-          <label className="text-sm font-normal text-neutral-600 md:text-xl" htmlFor="message">
+          <label
+            className="text-sm font-normal text-neutral-600 md:text-xl"
+            htmlFor="message"
+          >
             MESSAGE
           </label>
           <textarea
-            {...register('message')}
+            {...register("message")}
             className="h-28 w-full resize-none border-b border-black py-1 text-base font-normal outline-none hover:border-b-2 focus:border-b-2"
             id="message"
             name="message"
@@ -109,15 +136,24 @@ const Form = () => {
         >
           Submit Message
           <div className="relative flex h-full w-11 items-center overflow-hidden">
-            <span className={`absolute transition-all duration-500 ease-in-out ${hover ? 'right-0' : 'right-12'}`}>
-              <FaArrowRight size={'0.9em'} color="black" />
+            <span
+              className={`absolute transition-all duration-500 ease-in-out ${
+                hover ? "right-0" : "right-12"
+              }`}
+            >
+              <FaArrowRight size={"0.9em"} color="black" />
             </span>
-            <span className={`absolute transition-all duration-500 ease-in-out ${hover ? '-right-12' : 'right-0'}`}>
-              <FaArrowRight size={'0.9em'} color="black" />
+            <span
+              className={`absolute transition-all duration-500 ease-in-out ${
+                hover ? "-right-12" : "right-0"
+              }`}
+            >
+              <FaArrowRight size={"0.9em"} color="black" />
             </span>
           </div>
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };
