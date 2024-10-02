@@ -35,16 +35,18 @@ jobs:
           DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
         run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Notify on Telegram
+      - name: Notify on Telegram - Success
         if: success()
         run: |
           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
           -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-          -d text="✅ Build Succeeded for techunter prod"
+          -d text="✅ Build Succeeded for repository: ${{ github.repository }}\nBranch: ${{ github.ref_name }}\nCommit: ${{ github.sha }}\nCommit message: ${{ github.event.head_commit.message }}"
 
-      - name: Notify Failure on Telegram
+
+      - name: Notify on Telegram - Failure
         if: failure()
         run: |
           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
           -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-          -d text="❌ Build Failed for techunter prod"
+          -d text="❌ Build Failed for repository: ${{ github.repository }}\nBranch: ${{ github.ref_name }}\nCommit: ${{ github.sha }}\nCommit message: ${{ github.event.head_commit.message }}\nError: ${{ job.status }}"
+          
