@@ -1,28 +1,66 @@
 'use client';
+
+import Link from "next/link";
+import { useEffect, useMemo } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getBlogs } from "@/store/slices/BlogsSlice";
+import type { RootState } from "../../store/store";
+
+interface RSSFeedItem {
+  title: string;
+  link: string;
+  guid?: {
+    _: string;
+    $: {
+      isPermaLink: string;
+    };
+  };
+  category?: string[];
+  "dc:creator": string;
+  pubDate: string;
+  "atom:updated": string;
+  "content:encoded": string;
+  image: string;
+  description: string;
+  formattedDate: string;
+}
+
 export default function BlogsCard() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBlogs());
+  }, [dispatch]);
+
+  const blogData = useSelector((state: RootState) => state.blogs.data);
+
+  const memoizedBlogs = useMemo(() => blogData as RSSFeedItem[] | undefined, [blogData]);
+
   return (
     <>
-      <div className="">
-        <div className="flex gap-2">
-          <div className="bg-gray-200 rounded-full">
-            <img src="https://picsum.photos/60/60" alt="" className="rounded-full" />
-          </div>
-          <div className="flex flex-col">
-            <p className="text-gray-400">Posted by</p>
-            <p className="text-gray-950">Techunter</p>
-          </div>
-        </div>
-        <div className="bg-gray-200 py-4">
-          <img src="https://picsum.photos/230/350" alt="" className="w-[350px] h-[230px] object-cover" />
-        </div>
-        <div className="py-4">
-          <p className="text-gray-400">july 27 ,2023</p>
-          <h2 className="text-gray-950 font-bold text-[16px]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo in voluptatibus, necessitatibus illo
-            sed.
-          </h2>
-        </div>
-      </div>
+      {memoizedBlogs && memoizedBlogs.length > 0 ? (
+        memoizedBlogs.map((blog) => (
+          <Link href={blog.link} key={blog.guid._} className="">
+            <div className="aspect-[480/258] overflow-hidden rounded-[4px] bg-[#f5f5f5]">
+              <img
+                src={blog.image}
+                alt={blog.title}
+                width="100%"
+                height="100%"
+                className="w-full aspect-[480/258] group-hover:scale-[1.1] object-cover duration-300 max-w-full h-auto"
+              />
+            </div>
+            <div className="text-pretty">
+              <p className="body-2 group-hover:underline duration-300 font-bold mt-4 mb-0 text-gray-950 leading-[150%] text-pretty">
+                {blog.title}
+              </p>
+              <span className="text-pretty text-muted line-clamp-3">{blog.description}</span>
+            </div>
+          </Link>
+        ))
+      ) : (
+        <p>No blog data available.</p>
+      )}
     </>
   );
 }
