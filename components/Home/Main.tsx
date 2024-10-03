@@ -29,6 +29,8 @@ export default function HomePage() {
                 <div className="flex w-full justify-center p-3 md:w-[45%] md:justify-end">
                     <Image
                         className="h-auto w-[90%] md:w-full"
+                        width={500}
+                        height={500}
                         src="/images/hero_img.webp"
                         alt="Hero Image"
                     />
