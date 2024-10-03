@@ -1,17 +1,11 @@
-"use client";
-
-import { configureStore } from "@reduxjs/toolkit";
-
-import CounterReducer from './slices/CounterSlice'
-import { blogSlice } from "./slices/BlogsSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import blogReducer from './slices/BlogsSlice'; // Adjust path as necessary
 
 export const store = configureStore({
-    reducer: {
-        counter: CounterReducer,
-        blogs: blogSlice.reducer
-    }
-})
-
+  reducer: {
+    blogs: blogReducer
+  },
+});
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

@@ -14,6 +14,7 @@ export const getBlogs = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get("https://rss-feed-rose.vercel.app/api/rss");
+            if(response.status !== 200) return rejectWithValue(response.data);
             return response.data;
         } catch (error:any) {
             return rejectWithValue(error.response.data);

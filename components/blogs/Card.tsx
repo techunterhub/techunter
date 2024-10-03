@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getBlogs } from "@/store/slices/BlogsSlice";
-import type { RootState } from "../../store/store";
+import type { RootState, AppDispatch } from "@/store/store";
 import Image from "next/image";
 
 interface RSSFeedItem {
@@ -27,7 +27,7 @@ interface RSSFeedItem {
 }
 
 export default function BlogsCard() {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getBlogs());

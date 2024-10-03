@@ -19,3 +19,22 @@ body {
     text-wrap: balance;
   }
 }
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dots li {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.dots li.active {
+  background-color: #171717; 
+}
