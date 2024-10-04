@@ -14,7 +14,7 @@ export default function HomePage() {
                         Empowering <br /> Your Tech Journey
                     </h1>
                     <p className="mt-3 text-justify text-sm italic text-gray-600 sm:text-base md:text-lg lg:text-xl">
-                    At Techunter, our mission is to empower newcomers in the tech industry by providing comprehensive guidance in both frontend and backend development—completely free of charge! We believe that everyone should have access to quality tech education and support, regardless of their background. Join our community to learn, grow, and unlock your potential in the ever-evolving world of technology. Discover valuable resources, connect with like-minded individuals, and receive hands-on support every step of the way. Let’s embark on this journey together, and build a brighter future in tech!
+                    At Techunter, our mission is to empower newcomers in the tech industry by providing comprehensive guidance in tech journey—completely free of charge! We believe that everyone should have access to quality tech education and support, regardless of their background. Join our community to learn, grow, and unlock your potential in the ever-evolving world of technology.
                     </p>
 
                     <div className="mt-5 flex w-full flex-wrap justify-center gap-5 md:justify-start">

@@ -45,20 +45,19 @@ const Footer = () => {
                   target="_blank"
                   className="font-bold hover:underline"
                 >
-                  <FaDiscord size="1.5em" />
+                  <FaDiscord className="hover:text-blue-500 transition-all ease-linear duration-300" size="1.5em" />
                 </Link>
                 <Link
                   href="https://m.me/j/AbZScFyvTHpDOAvG/"
                   target="_blank"
                   className="font-bold hover:underline"
                 >
-                  <FaFacebookMessenger size="1.4em" />
+                  <FaFacebookMessenger className="hover:text-blue-700 transition-all ease-linear duration-300" size="1.4em" />
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter Sign Up */}
           <div className="text-center lg:text-left">
             <h3 className="text-lg font-bold mb-4">Sign Up for Newsletter</h3>
             <form
