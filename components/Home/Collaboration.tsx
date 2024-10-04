@@ -20,7 +20,7 @@ export default function Collaboration() {
       </div>
 
       <div className="mt-3 flex flex-col items-center justify-between sm:flex-row sm:items-start">
-        <p className="mb-4 w-full text-justify text-sm leading-relaxed sm:mb-0 sm:w-1/2 sm:text-base lg:text-lg">
+        <p className="mb-4 p-4 sm:p-0 w-full text-justify text-sm leading-relaxed sm:mb-0 sm:w-1/2 sm:text-base lg:text-lg">
           At Techunter, we’re not just about learning; we’re a friendly community that loves to collaborate and share ideas. We believe that great things happen when we work together, and we want to help turn your ideas into reality! If you’re passionate about tech and looking to join forces, we’d love to chat. Let’s create something amazing together!
         </p>
 

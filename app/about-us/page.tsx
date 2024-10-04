@@ -1,6 +1,7 @@
 "use client";
 
 import { ContactCards } from "@/components/contact/Cards";
+import { useEffect } from "react";
 
 interface CardData {
   title: string;
@@ -9,6 +10,9 @@ interface CardData {
 }
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "About Us | Techunter";
+  })
   const cardData : readonly CardData[] = [
     {
       title: "Empower Your Tech Journey",
