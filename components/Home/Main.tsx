@@ -5,7 +5,6 @@ import Collaboration from "./Collaboration";
 import TestimonialCarousel from "./TestimonialCarousel";
 // import FaqPage from "../faq/FaqPage";
 import Image from 'next/image'
-import { useEffect } from "react";
 export default function HomePage() {
     return (
         <div className="font-montserrat">
