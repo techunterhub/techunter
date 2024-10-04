@@ -24,7 +24,7 @@ export default function Collaboration() {
           At Techunter, we’re not just about learning; we’re a friendly community that loves to collaborate and share ideas. We believe that great things happen when we work together, and we want to help turn your ideas into reality! If you’re passionate about tech and looking to join forces, we’d love to chat. Let’s create something amazing together!
         </p>
 
-        {/* <div className="w-full sm:w-auto">
+         {/* <div className="w-full sm:w-auto">
           <Newsletter />
         </div> */}
       </div>
