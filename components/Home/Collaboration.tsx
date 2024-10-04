@@ -10,20 +10,18 @@ export default function Collaboration() {
             Collaboration
           </h2>
           <h1 className="mt-4 text-2xl font-bold leading-snug sm:text-4xl lg:text-5xl">
-            Got a project? <br /> Let’s talk.
+            Collaborate with Techunter <br /> Bringing Ideas to Life Together!
           </h1>
         </div>
 
         <div className="mt-4 flex w-full justify-center sm:mt-0 sm:w-auto sm:justify-end">
-        <HeroButton details={['Contact us', '/contact']} type="primary" />
+          <HeroButton details={['Contact us', '/contact']} type="primary" />
         </div>
       </div>
 
       <div className="mt-3 flex flex-col items-center justify-between sm:flex-row sm:items-start">
         <p className="mb-4 w-full text-justify text-sm leading-relaxed sm:mb-0 sm:w-1/2 sm:text-base lg:text-lg">
-          We’re a team of creatives who are excited about unique ideas and help
-          individuals and companies to create amazing identity by crafting
-          top-notch websites.
+          At Techunter, we’re not just about learning; we’re a friendly community that loves to collaborate and share ideas. We believe that great things happen when we work together, and we want to help turn your ideas into reality! If you’re passionate about tech and looking to join forces, we’d love to chat. Let’s create something amazing together!
         </p>
 
         {/* <div className="w-full sm:w-auto">

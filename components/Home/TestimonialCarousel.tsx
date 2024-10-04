@@ -10,13 +10,13 @@ const testimonials = [
   },
   {
     id: 2,
-    text: "At Techunter, we all come together as a group to teach each other IT skills, especially in development. It's the perfect community for growing as a developer.",
+    text: "At Techunter, we all come together as a group to teach each other IT skills, especially in development. It's the perfect community for growing as a developer. We share and learn together, not just as individuals but as a team—that’s what makes us Techunter!",
     author: "Bishwa Jung Shah",
     position: "Member",
   },
   {
     id: 3,
-    text: "Maile chai yo group bata pako vaneko friends who are ready to help me anytime Connection build gare maile chai yo grp bata sabai lai chine I was a backend developer ani teti vaye pugxa sochthe bt yo grp ma aayesi chai yota kei haina raixa still I need to learn more wala feeling aauxa Sabai jana yeha frontend developer xan so dherai nai help vako xa malai frontend sikna ko lagiKei problems aayo vane thyakka sodna paihalxa sabaile help grxauSo thank you guys TechHunter has helped me alot grow as a developer",
+    text: "I want to thank this group for being filled with supportive friends who are always ready to help. I was a backend developer, but joining this group has shown me how much I still have to learn in frontend development. I can always ask questions when I face challenges. Thanks to TechHunter, I’ve grown significantly as a developer!",
     author: "Ujwal",
     position: "Member",
   },
@@ -28,7 +28,7 @@ const testimonials = [
   },
   {
     id: 5,
-    text: "Tech Hunter has truly helped me grow as a developer. I’ve been able to improve my skills in multiple programming languages and connect with a community of like-minded individuals. Whether you're just starting or looking to expand your knowledge, I highly recommend this group for anyone interested in learning and teaching different programming languages.",
+    text: "Tech Hunter has helped me grow as a developer by enhancing my skills in various programming languages and connecting me with a supportive community. I highly recommend this group for anyone eager to learn and teach!",
     author: "Dipsan Dheetal",
     position: "Member",
   },

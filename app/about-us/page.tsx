@@ -62,7 +62,7 @@ const Home = () => {
             supportive. I finally feel confident in my ability to troubleshoot
             tech issues and maximize my productivity.&rdquo;
           </p>
-          <p className="text-right font-semibold">- Sarah, Satisfied User</p>
+          <p className="text-right font-semibold">- Pramod Laha</p>
         </div>
         <div>
           <a

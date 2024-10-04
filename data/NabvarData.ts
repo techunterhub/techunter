@@ -1,12 +1,13 @@
 import {
     ChatBubbleBottomCenterTextIcon,
     CursorArrowRaysIcon,
-    PhotoIcon,
+    ClockIcon,
     CodeBracketIcon,
     ChatBubbleLeftRightIcon,
     PhoneIcon,
   } from "@heroicons/react/24/outline";
   
+
 import { NavbarProductData, NavbarcallsToActionData, NavbarBlogData } from "@/types/types";
 
 
@@ -14,28 +15,28 @@ import { NavbarProductData, NavbarcallsToActionData, NavbarBlogData } from "@/ty
     {
       name: "Techunter GPT",
       description: "Try our latest AI chatbot for your doubt solving.",
-      href: "#",
+      href: "https://gpt.techunterhub.com/",
       icon: ChatBubbleBottomCenterTextIcon,
     },
+    // {
+    //   name: "Image Generator",
+    //   description: "Image Generator is our latest technology we built.",
+    //   href: "#",
+    //   icon: CursorArrowRaysIcon,
+    // },
     {
-      name: "Image Generator",
-      description: "Image Generator is our latest technology we built.",
-      href: "#",
-      icon: CursorArrowRaysIcon,
+      name: "Days Until",
+      description: "Easily find out how many days remain until your next big occasion!",
+      href: "https://events.techunterhub.com/",
+      icon: ClockIcon,
     },
-    {
-      name: "Image Resizer",
-      description: "Get help with easy image resizer, helps you customize image.",
-      href: "#",
-      icon: PhotoIcon,
-    },
-    {
-      name: "Github Profile Designer",
-      description:
-        "Connect with our Github Tool that will make your profile more attractive.",
-      href: "#",
-      icon: CodeBracketIcon,
-    },
+    // {
+    //   name: "Github Profile Designer",
+    //   description:
+    //     "Connect with our Github Tool that will make your profile more attractive.",
+    //   href: "#",
+    //   icon: CodeBracketIcon,
+    // },
   ];
   
   export const callsToAction: NavbarcallsToActionData[] = [

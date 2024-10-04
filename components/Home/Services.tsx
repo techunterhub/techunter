@@ -7,17 +7,17 @@ const services = [
     description: "Try our latest AI chabot for your doubt solving.",
   },
   {
-    category: "Design",
+    category: "Design (soon)",
     title: "Image Generator",
     description: "Image Generator is our latest technology we built.",
   },
   {
-    category: "Image Modifier",
-    title: "Image Resizer",
-    description: "Get help with easy image resizer, helps you customize image.",
+    category: "Countdown",
+    title: "Days Until",
+    description: "Easily find out how many days remain until your next big occasion!",
   },
   {
-    category: "Github",
+    category: "Github (soon)",
     title: "Github Profile Designer",
     description: "Connect with our Github Tool that will make your profile more attractive.",
   },

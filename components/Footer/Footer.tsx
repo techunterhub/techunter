@@ -14,8 +14,8 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Tools</h3>
             <ul>
               <li>
-                <Link href="/github-profile-maker" className="font-bold">
-                  Github Profile Maker
+                <Link href="https://events.techunterhub.com/" className="font-bold">
+                  Dasys Until
                 </Link>
               </li>
               <li>
