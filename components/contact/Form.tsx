@@ -15,6 +15,7 @@ interface FormData {
 
 const Form = () => {
   const { register, handleSubmit, reset } = useForm<FormData>();
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const messegeSentAlert = () =>
     toast.success("Message sent successfully!", {
       position: "bottom-right",
@@ -40,6 +41,7 @@ const Form = () => {
       transition: Bounce,
     });
   const onSubmit = async (formData: FormData) => {
+    setIsSubmitting(true)
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -57,6 +59,9 @@ const Form = () => {
       }
     } catch {
       messegeFailedAlert();
+    }
+    finally {
+      setIsSubmitting(false)
     }
   };
 
@@ -139,6 +144,7 @@ const Form = () => {
         <button
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
+          disabled = {isSubmitting}
           type="submit"
           onSubmit={handleSubmit(onSubmit)}
           className="flex h-14 w-fit flex-row items-center gap-4 border-b border-black px-2 py-3 text-base font-semibold outline-none hover:border-b-2"
