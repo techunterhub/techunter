@@ -9,8 +9,9 @@ const Footer = () => {
         <div className="container mx-auto grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div className="text-center lg:text-left">
             <h3 className="text-lg font-bold mb-4">TECHUNTER</h3>
-            <p className="text-base font-medium">Get support and updates on your development journey and growth.</p>
-
+            <p className="text-base font-medium">
+              Get support and updates on your development journey and growth.
+            </p>
           </div>
 
           <div className="text-center lg:text-left">
@@ -33,6 +34,15 @@ const Footer = () => {
                   Techunter GPT
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="https://shortenurl.techunterhub.com/"
+                  target="_blank"
+                  className="hover:underline"
+                >
+                  URL Shortener
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -45,14 +55,20 @@ const Footer = () => {
                   target="_blank"
                   className="font-bold hover:underline"
                 >
-                  <FaDiscord className="hover:text-blue-500 transition-all ease-linear duration-300" size="1.5em" />
+                  <FaDiscord
+                    className="hover:text-blue-500 transition-all ease-linear duration-300"
+                    size="1.5em"
+                  />
                 </Link>
                 <Link
                   href="https://m.me/j/AbZScFyvTHpDOAvG/"
                   target="_blank"
                   className="font-bold hover:underline"
                 >
-                  <FaFacebookMessenger className="hover:text-blue-700 transition-all ease-linear duration-300" size="1.4em" />
+                  <FaFacebookMessenger
+                    className="hover:text-blue-700 transition-all ease-linear duration-300"
+                    size="1.4em"
+                  />
                 </Link>
               </li>
             </ul>

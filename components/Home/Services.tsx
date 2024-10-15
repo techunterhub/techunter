@@ -7,9 +7,9 @@ const services = [
     description: "Try our latest AI chabot for your doubt solving.",
   },
   {
-    category: "Design (soon)",
-    title: "Image Generator",
-    description: "Image Generator is our latest technology we built.",
+    category: "URL",
+    title: "URL Shortener",
+    description: "Try our url shortener to short your long url to short url in just a step.",
   },
   {
     category: "Countdown",
