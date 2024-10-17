@@ -35,7 +35,7 @@ const UrlShortener: React.FC = () => {
     try {
       const response = await axios.post(`${baseUrl}?api_token=${apiToken}`, data, { headers });
       setShortenUrl(response.data.data.tiny_url);
-    } catch (error) {
+    } catch {
       setShortenUrl("Try again with a valid URL");
     } finally {
       setIsLoading(false); 
