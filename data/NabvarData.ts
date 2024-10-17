@@ -30,13 +30,13 @@ import { NavbarProductData, NavbarcallsToActionData, NavbarBlogData } from "@/ty
       href: "https://events.techunterhub.com/",
       icon: ClockIcon,
     },
-    // {
-    //   name: "Github Profile Designer",
-    //   description:
-    //     "Connect with our Github Tool that will make your profile more attractive.",
-    //   href: "#",
-    //   icon: CodeBracketIcon,
-    // },
+     {
+       name: "Url Shortener",
+       description:
+         "Try our url shortener to short your long url to short url in just a step.",
+       href: "/url-shortener",
+       icon: CodeBracketIcon,
+     },
   ];
   
   export const callsToAction: NavbarcallsToActionData[] = [
