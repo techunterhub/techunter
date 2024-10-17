@@ -36,8 +36,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="https://shortenurl.techunterhub.com/"
-                  target="_blank"
+                  href="/url-shortener"
                   className="hover:underline"
                 >
                   URL Shortener
