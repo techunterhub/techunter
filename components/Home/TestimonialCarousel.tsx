@@ -11,7 +11,7 @@ const testimonials = [
   },
   {
     id: 2,
-    text: "At Techunter, we all come together as a group to teach each other IT skills, especially in development. It's the perfect community for growing as a developer. We share and learn together, not just as individuals but as a team—that’s what makes us Techunter!",
+    text: "At Techunter, we all come together as a group to teach each other IT skills, especially in development. It's the perfect community for growing as a developer. We share and learn together, not just as individuals but as a team—that is what makes us Techunter!",
     author: "Bishwa Jung Shah",
     position: "Member",
     link: "https://github.com/beesou777/",
@@ -46,14 +46,14 @@ const testimonials = [
   },
   {
     id: 7,
-    text: "A must-join tech community for every tech enthusiast, I’ve learned so much from Techunter!",
+    text: "As a member of Techunter, I have gained invaluable knowledge and skills that have significantly contributed to my growth in understanding technology. This community has been an essential part of my learning journey.",
     author: "Rehan Paudel",
     position: "Member",
     link: "https://github.com/Rehan22345",
   },
   {
     id: 8,
-    text: "I want to thank this group for being filled with supportive friends who are always ready to help. I was a backend developer, but joining this group has shown me how much I still have to learn in frontend development. I can always ask questions when I face challenges. Thanks to TechHunter, I’ve grown significantly as a developer!",
+    text: "I want to thank this group for being filled with supportive friends who are always ready to help. I was a backend developer, but joining this group has shown me how much I still have to learn in frontend development. I can always ask questions when I face challenges. Thanks to TechHunter, I have grown significantly as a developer!",
     author: "Ujwal",
     position: "Member",
     link: "https://github.com/UjjwalN15",
