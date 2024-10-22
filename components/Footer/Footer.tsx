@@ -19,7 +19,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="https://events.techunterhub.com/"
+                  href="/events"
                   className="hover:underline"
                 >
                   Event Tracker
@@ -27,7 +27,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="https://gpt.techunterhub.com/"
+                  href="/gpt"
                   target="_blank"
                   className="hover:underline"
                 >

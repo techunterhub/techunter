@@ -7,7 +7,7 @@ const services = [
     category: "Chat AI",
     title: "Techunter GPT",
     description: "Try our latest AI chabot for your doubt solving.",
-    link: "https://gpt.techunterhub.com/",
+    link: "/gpt",
   },
   {
     category: "URL",
@@ -21,15 +21,15 @@ const services = [
     title: "Days Until",
     description:
       "Easily find out how many days remain until your next big occasion!",
-    link: "https://events.techunterhub.com/",
+    link: "/events",
   },
-  {
-    category: "Github (soon)",
-    title: "Github Profile Designer",
-    description:
-      "Connect with our Github Tool that will make your profile more attractive.",
-    link: "/",
-  },
+  // {
+  //   category: "Github (soon)",
+  //   title: "Github Profile Designer",
+  //   description:
+  //     "Connect with our Github Tool that will make your profile more attractive.",
+  //   link: "/",
+  // },
 ];
 
 export default function Services() {
