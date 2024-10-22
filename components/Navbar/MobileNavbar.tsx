@@ -38,7 +38,7 @@ export default function MobileNavbar({ products, callsToAction, mobileMenuOpen, 
                         <Links href="#" text="Blogs" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
                         <Links href="/about-us" text="About Us" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
                         <Links href="/contact" text="Contact Us" style="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
-                        <Links href="#" text="Login" style="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" />
+                        
                     </div>
                 </div>
             </DialogPanel>
