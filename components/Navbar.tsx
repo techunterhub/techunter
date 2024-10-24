@@ -10,7 +10,6 @@ import Links from "./ui/Link";
 import Productdata from "./Navbar/ProductList";
 import { blogs, products, callsToAction } from "@/data/NabvarData";
 import CallsToAction from "./Navbar/CallToAction";
-import BlogsList from "./Navbar/BlogList";
 import HeroButton from "./ui/HeroButton";
 
 export default function Example() {
