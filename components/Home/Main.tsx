@@ -18,7 +18,7 @@ export default function HomePage() {
                     </p>
 
                     <div className="mt-5 flex w-full flex-wrap justify-center gap-5 md:justify-start">
-                        <HeroButton details={['Join Us', 'https://discord.gg/gFVzMqAU']} type="primary" />
+                        <HeroButton details={['Join Us', 'https://discord.gg/AZWKQgF9Q9']} type="primary" />
                         <HeroButton details={["Blogs", "/blogs"]} type="secondary" />
                     </div>
                 </div>

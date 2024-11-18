@@ -50,7 +50,7 @@ const Footer = () => {
             <ul className="flex justify-center lg:justify-start space-x-4">
               <li className="flex justify-center gap-3">
                 <Link
-                  href="https://discord.gg/gFVzMqAU"
+                  href="https://discord.gg/AZWKQgF9Q9"
                   target="_blank"
                   className="font-bold hover:underline"
                 >
