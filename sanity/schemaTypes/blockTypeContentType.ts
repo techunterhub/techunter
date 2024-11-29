@@ -55,6 +55,7 @@ export const blockContentType = defineType({
             ],
           },
         ],
+
       },
     }),
     // You can add additional types here. Note that you can't use
