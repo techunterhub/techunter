@@ -1,8 +1,6 @@
 import {
     ChatBubbleBottomCenterTextIcon,
-    CursorArrowRaysIcon,
     ClockIcon,
-    CodeBracketIcon,
     ChatBubbleLeftRightIcon,
     PhoneIcon,
   } from "@heroicons/react/24/outline";

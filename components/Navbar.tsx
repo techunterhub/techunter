@@ -50,7 +50,10 @@ export default function Example() {
               <Productdata products={products} />
               <CallsToAction callsToAction={callsToAction} />
             </PopOverPanel>
-            <BlogsList blogs={blogs} />
+           <Links
+              href="/blogs"
+              text="Blogs"
+              style="text-sm font-semibold leading-6 text-gray-900" /> 
             <Links
               href="/about-us"
               text="About Us"

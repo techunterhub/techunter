@@ -1,25 +1,32 @@
 "use client";
 
+import { link } from "fs";
+import Link from "next/link";
+
 const services = [
   {
     category: "Chat AI",
     title: "Techunter GPT",
+    link:'https://gpt.techunterhub.com/',
     description: "Try our latest AI chabot for your doubt solving.",
   },
   {
-    category: "Design (soon)",
-    title: "Image Generator",
-    description: "Image Generator is our latest technology we built.",
+    category: "URL",
+    title: "URL Shortener",
+    link:'/url-shortener',
+    description: "Try our url shortener to short your long url to short url in just a step.",
   },
   {
     category: "Countdown",
     title: "Days Until",
+    link:'https://events.techunterhub.com/',
     description: "Easily find out how many days remain until your next big occasion!",
   },
   {
-    category: "Github (soon)",
-    title: "Github Profile Designer",
-    description: "Connect with our Github Tool that will make your profile more attractive.",
+    category: "Blogs (new)",
+    title: "Read Our Blogs",
+    link:'/blogs',
+    description: "Read our latest blogs and stay updated with the latest tech news and trends.",
   },
 ];
 
@@ -38,7 +45,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div key={index} className="space-y-2">
               <h4 className="text-sm font-semibold uppercase text-gray-600">{service.category}</h4>
-              <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
+              <Link href={service.link} className="text-xl font-bold text-gray-900">{service.title}</Link>
               <p className="text-gray-600">{service.description}</p>
             </div>
           ))}

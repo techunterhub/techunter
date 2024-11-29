@@ -29,7 +29,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Connect With Us</h3>
             <ul>
               <li>
-                <Link href="https://discord.gg/gFVzMqAU" target="_blank" className="font-bold">
+                <Link href="https://discord.gg/AZWKQgF9Q9" target="_blank" className="font-bold">
                   <FaDiscord size="1.2em" />
                 </Link>
               </li>
