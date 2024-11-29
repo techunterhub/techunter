@@ -1,6 +1,7 @@
 "use client";
 import { ContactCards } from "@/components/contact/Cards";
 import Form from "@/components/contact/Form";
+import { useEffect } from "react";
 
 interface CardData {
   title: string;
@@ -10,6 +11,9 @@ interface CardData {
 
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = "Contact | Techunter";
+  })
 
   const cardData: readonly CardData[] = [
     {
@@ -58,7 +62,6 @@ export default function Contact() {
       </div>
       <div className="mt-3 w-full border border-black opacity-80"></div>
       <ContactCards cardData={cardData} />
-      <h1 className="text-3xl font-semibold text-center">testing the staging</h1>
       <Form />
     </div>
   );

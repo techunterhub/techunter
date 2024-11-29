@@ -3,10 +3,11 @@ import {
     ClockIcon,
     ChatBubbleLeftRightIcon,
     PhoneIcon,
+    CodeBracketIcon
   } from "@heroicons/react/24/outline";
   
 
-import { NavbarProductData, NavbarcallsToActionData, NavbarBlogData } from "@/types/types";
+import { NavbarProductData, NavbarcallsToActionData } from "@/types/types";
 
 
   export const products: NavbarProductData[] = [
@@ -28,41 +29,17 @@ import { NavbarProductData, NavbarcallsToActionData, NavbarBlogData } from "@/ty
       href: "https://events.techunterhub.com/",
       icon: ClockIcon,
     },
-    // {
-    //   name: "Github Profile Designer",
-    //   description:
-    //     "Connect with our Github Tool that will make your profile more attractive.",
-    //   href: "#",
-    //   icon: CodeBracketIcon,
-    // },
+     {
+       name: "Url Shortener",
+       description:
+         "Try our url shortener to short your long url to short url in just a step.",
+       href: "/url-shortener",
+       icon: CodeBracketIcon,
+     },
   ];
   
   export const callsToAction: NavbarcallsToActionData[] = [
     { name: "Chat with chatbot", href: "#", icon: ChatBubbleLeftRightIcon },
     { name: "Contact Us", href: "contact", icon: PhoneIcon },
-  ];
-  
-  export const blogs: NavbarBlogData[] = [
-    {
-      date: "Mar 5, 2023",
-      title: "Boost your conversion rate",
-      description:
-        "Learn strategies to increase conversion rates and drive more sales.",
-      link: "#",
-    },
-    {
-      date: "Feb 25, 2023",
-      title: "How to use search engine optimization to drive traffic",
-      description:
-        "A comprehensive guide to improving SEO for better traffic generation.",
-      link: "#",
-    },
-    {
-      date: "Feb 21, 2023",
-      title: "Improve your customer experience",
-      description:
-        "Tips on enhancing customer satisfaction through modern techniques.",
-      link: "#",
-    },
   ];
   

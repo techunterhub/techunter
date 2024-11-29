@@ -1,6 +1,7 @@
 "use client";
 
 import { ContactCards } from "@/components/contact/Cards";
+import { useEffect } from "react";
 
 interface CardData {
   title: string;
@@ -9,6 +10,9 @@ interface CardData {
 }
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "About Us | Techunter";
+  })
   const cardData : readonly CardData[] = [
     {
       title: "Empower Your Tech Journey",
@@ -66,7 +70,7 @@ const Home = () => {
         </div>
         <div>
           <a
-            href="https://discord.gg/techunter"
+            href="https://discord.gg/AZWKQgF9Q9"
             className="inline-block rounded-full bg-gray-900 px-6 py-3 text-lg font-semibold text-white shadow-lg transition hover:bg-gray-800"
           >
             Join the Techunter Community

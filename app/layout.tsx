@@ -5,20 +5,13 @@ import "./globals.css";
 import { Provider } from "./_provider/index";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer/Footer";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: "techunter | we are the techunter and we love to build things",
-  description: "we are the techunter hub and we love to build things",
+  title: "Techunter",
+  description:
+    "At Techunter, our mission is to empower newcomers in the tech industry by providing comprehensive guidance in tech journey—completely free of charge! ",
 };
 
 export default function RootLayout({
