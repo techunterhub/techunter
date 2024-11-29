@@ -92,7 +92,8 @@ const BlogsPage = async () => {
                 </main>
             </>
         );
-    } catch (err) {
+    } catch (error) {
+        console.error('Error fetching Blogs:', error);
         return (
             <main className="safe-area">
                 <Text>Unable to find Blogs.</Text>

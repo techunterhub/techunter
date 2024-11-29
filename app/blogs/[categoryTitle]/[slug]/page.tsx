@@ -42,7 +42,6 @@ interface Body {
     _type: string;
     style: string;
     _key: string;
-    markDefs: any[];
     children: Child[];
     listItem?: string;
     level?: number;

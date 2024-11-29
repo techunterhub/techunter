@@ -8,7 +8,7 @@ const customTheme: MantineThemeOverride = {
   primaryShade: 6,
   components: {
     Input: {
-      styles: (theme: any) => ({
+      styles: (theme) => ({
         input: {
           borderColor: theme.colors.gray[2], // 'gray[1]' corresponds to `text-gray-100`
         },

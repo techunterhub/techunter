@@ -1,5 +1,4 @@
-import { Title, Text, TextInput, Button } from "@mantine/core";
-import { IconSearch } from "@tabler/icons-react";
+import { Title, Text, Button } from "@mantine/core";
 import SanityClient from "@/sanity/client";
 import Link from "next/link";
 

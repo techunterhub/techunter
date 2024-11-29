@@ -3,12 +3,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { PopoverGroup } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-
 import PopOverPanel from "./Navbar/PopOverPannel";
 import MobileNavbar from "./Navbar/MobileNavbar";
 import Links from "./ui/Link";
 import Productdata from "./Navbar/ProductList";
-import { blogs, products, callsToAction } from "@/data/NabvarData";
+import { products, callsToAction } from "@/data/NabvarData";
 import CallsToAction from "./Navbar/CallToAction";
 import HeroButton from "./ui/HeroButton";
 
@@ -55,10 +54,6 @@ export default function Example() {
               text="About Us"
               style="text-sm font-semibold leading-6 text-gray-900"
             />
-            {/* <Links
-              href="/contact"
-              text="Contact Us"
-              style="text-sm font-semibold leading-6 text-gray-900" /> */}
           </PopoverGroup>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <HeroButton details={["Contact Us", "/contact"]} type="primary" />
@@ -68,7 +63,6 @@ export default function Example() {
         <MobileNavbar
           products={products}
           callsToAction={callsToAction}
-          blogs={blogs}
           mobileMenuOpen={mobileMenuOpen}
           setMobileMenuOpen={setMobileMenuOpen}
         />
