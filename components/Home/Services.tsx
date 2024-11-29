@@ -6,7 +6,6 @@ const services = [
   {
     category: "Chat AI",
     title: "Techunter GPT",
-    link:'https://gpt.techunterhub.com/',
     description: "Try our latest AI chabot for your doubt solving.",
     link: "/gpt",
   },
@@ -29,7 +28,7 @@ const services = [
     title: "Techunter Blog",
     description:
       "Read our latest blog posts.",
-    link: "/",
+    link: "/blogs",
   },
 ];
 

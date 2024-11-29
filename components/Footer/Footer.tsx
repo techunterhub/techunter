@@ -42,6 +42,14 @@ const Footer = () => {
                   URL Shortener
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/blogs"
+                  className="hover:underline"
+                >
+                  Blogs
+                </Link>
+              </li>
             </ul>
           </div>
 
