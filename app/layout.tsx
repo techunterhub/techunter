@@ -24,6 +24,8 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={`antialiased`}>
+        <div>
+
         <Provider>
         <Head>
         <script
@@ -44,6 +46,7 @@ export default function RootLayout({
           <Analytics />
           <Footer />
         </Provider>
+        </div>
       </body>
     </html>
   );
