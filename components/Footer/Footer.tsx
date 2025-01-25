@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
-import { FaDiscord, FaFacebookMessenger } from "react-icons/fa";
+import { FaDiscord, FaFacebookMessenger ,} from "react-icons/fa";
+import { FaDev } from "react-icons/fa";
+
 
 const Footer = () => {
   return (
@@ -73,6 +75,16 @@ const Footer = () => {
                   className="font-bold hover:underline"
                 >
                   <FaFacebookMessenger
+                    className="hover:text-blue-700 transition-all ease-linear duration-300"
+                    size="1.4em"
+                  />
+                </Link>
+                <Link
+                  href=" https://dly.to/1wmwQtQuCiR"
+                  target="_blank"
+                  className="font-bold hover:underline"
+                >
+                  <FaDev
                     className="hover:text-blue-700 transition-all ease-linear duration-300"
                     size="1.4em"
                   />
